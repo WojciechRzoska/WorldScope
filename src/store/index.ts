@@ -5,9 +5,11 @@ import { Country } from 'types/country';
 const countriesApi = createApi({
   reducerPath: 'countriesApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://restcountries.com/v3.1/' }),
+  tagTypes: ['Countries'],
   endpoints: (builder) => ({
-    getCountries: builder.query<Country, void>({
+    getCountries: builder.query<Array<Country>, void>({
       query: () => `all`,
+      providesTags: ['Countries'],
     }),
   }),
 });

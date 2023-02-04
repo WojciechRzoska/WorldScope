@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 3%;
   overflow: hidden;
-  width: 15rem;
+  width: 16rem;
   min-width: 9rem;
   box-shadow: 2px 2px 4px -1px rgba(66, 68, 90, 1);
 `;
@@ -19,9 +19,13 @@ export const About = styled.div`
   padding: 1em 2em;
 
   h3 {
-    margin-bottom: 1em;
+    margin-bottom: 0.8em;
   }
   p {
     margin-bottom: 0.5em;
+    font-weight: 300;
   }
+`;
+export const BoldSpan = styled.span`
+  font-weight: 400;
 `;

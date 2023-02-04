@@ -1,4 +1,4 @@
-import { About, Flag, Wrapper } from './CountryBox.styles';
+import { About, BoldSpan, Flag, Wrapper } from './CountryBox.styles';
 
 interface Props {
   name: string;
@@ -16,9 +16,15 @@ const CountryBox = ({ name, flag, population, region, capital }: Props) => {
       </Flag>
       <About>
         <h3>{name}</h3>
-        <p>Population:{population}</p>
-        <p>Region: {region}</p>
-        <p>Capital: {capital}</p>
+        <p>
+          <BoldSpan>Population:</BoldSpan> {population}
+        </p>
+        <p>
+          <BoldSpan>Region:</BoldSpan> {region}
+        </p>
+        <p>
+          <BoldSpan>Capital:</BoldSpan> {capital}
+        </p>
       </About>
     </Wrapper>
   );
