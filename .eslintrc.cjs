@@ -30,5 +30,6 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'no-param-reassign': 0,
   },
 };

@@ -1,8 +1,19 @@
 import styled from 'styled-components';
+import { DarkMode } from 'types/types';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<DarkMode>`
   width: 90%;
   margin: 0 auto;
+
+  *:first-child,
+  *:nth-child(2),
+  > *:first-child > *,
+  > *:nth-child(3) > * {
+    background-color: ${({ darkMode, theme }) =>
+      darkMode ? theme.colors.darkBlue : theme.colors.white} !important;
+    color: ${({ darkMode, theme }) =>
+      darkMode ? theme.colors.white : theme.colors.darkBlueText} !important;
+  }
 `;
 
 export const FormField = styled.div`

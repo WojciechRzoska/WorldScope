@@ -6,15 +6,20 @@ import {
   Logo,
   DarkModeBtn,
 } from 'components/organisms/Navigation/Navigation.styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { IRootState, toogleTheme } from 'store/themeSlice';
 
 const Navigation = () => {
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state: IRootState) => state.theme.darkMode);
+
   return (
-    <Navbar>
+    <Navbar darkMode={darkMode}>
       <Container>
         <Logo>
           <h1>World scope</h1>
         </Logo>
-        <DarkModeBtn>
+        <DarkModeBtn onClick={() => dispatch(toogleTheme())}>
           <FontAwesomeIcon icon={faMoon} />
           {'  '}
           Dark mode

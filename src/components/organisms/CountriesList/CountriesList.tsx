@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Input } from 'components/atoms/input';
 import CountryBox from 'components/molecules/CountryBox/CountryBox';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useGetCountriesQuery } from 'store';
+import { IRootState } from 'store/themeSlice';
 import { Country } from 'types/country';
 import { Container, FormField, Select, Wrapper } from './CountriesList.styles';
 
@@ -13,6 +15,7 @@ const CountriesList = () => {
     []
   );
   const [selectedRegion, setSelectedRegion] = useState<string>('');
+  const darkMode = useSelector((state: IRootState) => state.theme.darkMode);
 
   useEffect(() => {
     setDataToRender(countries);
@@ -37,7 +40,7 @@ const CountriesList = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper darkMode={darkMode}>
       <FormField>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
         <Input

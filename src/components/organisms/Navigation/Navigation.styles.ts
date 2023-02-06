@@ -1,14 +1,20 @@
 import styled from 'styled-components';
+import { DarkMode } from 'types/types';
 
-export const Navbar = styled.div`
+export const Navbar = styled.div<DarkMode>`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
   padding: 1em 0em;
   box-shadow: 0px 3px 10px -10px rgba(66, 68, 90, 1);
+
+  background-color: ${({ darkMode, theme }) =>
+    darkMode ? theme.colors.darkBlue : theme.colors.white};
+  * {
+    color: ${({ darkMode, theme }) =>
+      darkMode ? theme.colors.white : theme.colors.darkBlueText};
+  }
 `;
 export const Container = styled.nav`
   display: flex;
-  background-color: ${({ theme }) => theme.colors.white};
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
