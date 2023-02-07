@@ -7,7 +7,13 @@ import { useSelector } from 'react-redux';
 import { useGetCountriesQuery } from 'store';
 import { IRootState } from 'store/themeSlice';
 import { Country } from 'types/country';
-import { Container, FormField, Select, Wrapper } from './CountriesList.styles';
+import {
+  Container,
+  Filters,
+  FormField,
+  Select,
+  Wrapper,
+} from './CountriesList.styles';
 
 const CountriesList = () => {
   const { data: countries } = useGetCountriesQuery();
@@ -41,26 +47,29 @@ const CountriesList = () => {
 
   return (
     <Wrapper darkMode={darkMode}>
-      <FormField>
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-        <Input
-          placeholder="Search for a country..."
-          onChange={(e: React.FormEvent<HTMLInputElement>) =>
-            filterCountries(e.currentTarget.value)
-          }
-        />
-      </FormField>
-      <Select
-        value={selectedRegion}
-        onChange={(e) => filtredRegion(e.target.value)}
-      >
-        <option value="">Filter by region</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">America</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </Select>
+      <Filters>
+        <FormField>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <Input
+            placeholder="Search for a country..."
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              filterCountries(e.currentTarget.value)
+            }
+          />
+        </FormField>
+        <Select
+          as="select"
+          value={selectedRegion}
+          onChange={(e) => filtredRegion(e.target.value)}
+        >
+          <option value="">Filter by region</option>
+          <option value="Africa">Africa</option>
+          <option value="Americas">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </Select>
+      </Filters>
       <Container>
         {dataToRender?.map(
           ({

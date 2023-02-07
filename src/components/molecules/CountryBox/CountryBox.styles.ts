@@ -4,12 +4,18 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 3%;
   overflow: hidden;
-  width: 16rem;
-  min-width: 9rem;
+  min-width: 7rem;
   box-shadow: 2px 2px 4px -1px rgba(66, 68, 90, 1);
+
+  @media (min-width: 20em) {
+    width: 70%;
+  }
+  @media (min-width: 37em) {
+    width: 100%;
+  }
 `;
 export const Flag = styled.div`
-  height: 9rem;
+  height: 10rem;
   img {
     width: 100%;
     height: 100%;
