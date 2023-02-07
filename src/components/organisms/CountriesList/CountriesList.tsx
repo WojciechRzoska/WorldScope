@@ -11,6 +11,7 @@ import {
   Container,
   Filters,
   FormField,
+  LinkStyle,
   Select,
   Wrapper,
 } from './CountriesList.styles';
@@ -58,7 +59,6 @@ const CountriesList = () => {
           />
         </FormField>
         <Select
-          as="select"
           value={selectedRegion}
           onChange={(e) => filtredRegion(e.target.value)}
         >
@@ -73,20 +73,23 @@ const CountriesList = () => {
       <Container>
         {dataToRender?.map(
           ({
-            name: { official },
+            name: { common, official },
             flags,
             population,
             region,
             capital,
+            cca3,
           }: Country) => (
-            <CountryBox
-              key={official}
-              name={official}
-              flag={flags.png}
-              population={population}
-              region={region}
-              capital={capital}
-            />
+            <LinkStyle key={common} to={`/country/${cca3}`}>
+              <CountryBox
+                key={common}
+                name={common}
+                flag={flags.png}
+                population={population}
+                region={region}
+                capital={capital}
+              />
+            </LinkStyle>
           )
         )}
       </Container>

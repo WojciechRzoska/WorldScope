@@ -1,10 +1,9 @@
+import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DarkMode } from 'types/types';
 
-export const Wrapper = styled.div<DarkMode>`
-  width: 90%;
-  margin: 0 auto;
-
+export const Wrapper = styled(ViewWrapper)<DarkMode>`
   *:first-child > *,
   *:nth-child(2) > * {
     background-color: ${({ darkMode, theme }) =>
@@ -43,6 +42,15 @@ export const FormField = styled.div`
   }
 `;
 
+export const LinkStyle = styled(Link)`
+  text-decoration: none;
+  @media (min-width: 20em) {
+    width: 70%;
+  }
+  @media (min-width: 37em) {
+    width: 100%;
+  }
+`;
 export const Select = styled.select`
   border: none;
   padding: 1.425em 3em;

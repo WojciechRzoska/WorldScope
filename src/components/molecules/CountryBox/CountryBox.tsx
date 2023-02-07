@@ -12,12 +12,12 @@ const CountryBox = ({ name, flag, population, region, capital }: Props) => {
   return (
     <Wrapper>
       <Flag>
-        <img src={flag} alt="germany flag" />
+        <img src={flag} alt="flag" />
       </Flag>
       <About>
         <h3>{name}</h3>
         <p>
-          <BoldSpan>Population:</BoldSpan> {population}
+          <BoldSpan>Population:</BoldSpan> {population.toLocaleString()}
         </p>
         <p>
           <BoldSpan>Region:</BoldSpan> {region}

@@ -69,4 +69,5 @@ export interface Country {
     format: string;
     regex: string;
   };
+  borders: Array<string>;
 }

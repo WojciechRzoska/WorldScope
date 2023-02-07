@@ -12,10 +12,14 @@ const countriesApi = createApi({
       query: () => `all`,
       providesTags: ['Countries'],
     }),
+    getSingleCountry: builder.query<Array<Country>, string | undefined>({
+      query: (code) => `alpha/${code}`,
+      providesTags: ['Countries'],
+    }),
   }),
 });
 
-export const { useGetCountriesQuery } = countriesApi;
+export const { useGetCountriesQuery, useGetSingleCountryQuery } = countriesApi;
 
 export const store = configureStore({
   reducer: {

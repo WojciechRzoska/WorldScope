@@ -6,13 +6,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
   min-width: 7rem;
   box-shadow: 2px 2px 4px -1px rgba(66, 68, 90, 1);
-
-  @media (min-width: 20em) {
-    width: 70%;
-  }
-  @media (min-width: 37em) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 export const Flag = styled.div`
   height: 10rem;
