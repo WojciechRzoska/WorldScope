@@ -3,7 +3,7 @@ import { DarkMode } from 'types/types';
 
 export const Navbar = styled.div<DarkMode>`
   width: 100%;
-  padding: 1em 0em;
+  padding: 1.125em 0em;
   box-shadow: 0px 3px 10px -10px rgba(66, 68, 90, 1);
 
   background-color: ${({ darkMode, theme }) =>
@@ -21,7 +21,7 @@ export const Container = styled.nav`
 `;
 export const Logo = styled.div`
   h1 {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 `;
 export const DarkModeBtn = styled.button`
