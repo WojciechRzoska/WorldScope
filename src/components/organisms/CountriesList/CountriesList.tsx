@@ -73,7 +73,7 @@ const CountriesList = () => {
       <Container>
         {dataToRender?.map(
           ({
-            name: { common, official },
+            name: { common },
             flags,
             population,
             region,

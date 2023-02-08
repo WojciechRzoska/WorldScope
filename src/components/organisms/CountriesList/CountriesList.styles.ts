@@ -44,6 +44,7 @@ export const FormField = styled.div`
 
 export const LinkStyle = styled(Link)`
   text-decoration: none;
+
   @media (min-width: 20em) {
     width: 70%;
   }
