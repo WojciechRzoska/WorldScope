@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   min-width: 7rem;
   box-shadow: 2px 2px 4px -1px rgba(66, 68, 90, 1);
   width: 100%;
+  height: 100%;
 `;
 export const Flag = styled.div`
   height: 10rem;

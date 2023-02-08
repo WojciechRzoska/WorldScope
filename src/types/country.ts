@@ -48,7 +48,7 @@ export interface Country {
     openStreetMaps: string;
   };
   population: number;
-  gini: { [key: string]: string };
+  gini: { [key: string]: number };
   fifa: string;
   car: {
     signs: Array<string>;
